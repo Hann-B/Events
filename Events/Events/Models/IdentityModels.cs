@@ -33,5 +33,6 @@ namespace Events.Models
         public DbSet<EventModel> Events { get; set; }
         public DbSet<GenreModel> Genres { get; set; }
         public DbSet<VenueModel> Venues { get; set; }
+        public DbSet<TicketModel> Tickets { get; set; }
     }
 }

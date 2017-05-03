@@ -7,10 +7,14 @@
     <ul>
         @foreach (var item in Model.Events)
         {
-            <li>@item.Title</li>
+            <li>@item.Title
+            <button class="btn btn-danger" onclick="removeFromCartHP('@item.TrackerId')"><i class="glyphicon glyphicon-remove"></i></button>
+            </li>
         }
     </ul>
-    @Html.ActionLink("Proceed To Checkout", "Checkout", "Home") 
+    <div class="lead">
+    @Html.ActionLink("View Shopping Cart", "Checkout", "Home")
+    </div>
 }
 else
 {

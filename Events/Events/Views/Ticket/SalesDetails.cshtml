@@ -1,0 +1,17 @@
+﻿@model Events.ViewModels.TicketSalesVM
+@{
+    ViewBag.Title = "SalesDetails";
+}
+
+<h2>Sales Details</h2>
+
+@foreach (var item in Model.Events)
+{
+    <ul>
+        <li>@Model.User.UserName</li>
+        <li>@item.Title</li>
+    </ul>
+    
+}
+
+Display a list of user going to this event

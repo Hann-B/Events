@@ -100,7 +100,8 @@ c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\bin\Microsoft
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.csprojResolveAssemblyReference.cache
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.dll
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.pdb
-C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.trytryagain2.resources
 C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.csproj.GenerateResource.Cache
-C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.trytryagain22.resources
-C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.shoppingCart.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.HomePageShopCartCacheClear.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.HomePageShopCartReload.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.AuthReqdCheckout.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.CheckoutCompleteWithoutPaymentOfCourse.resources

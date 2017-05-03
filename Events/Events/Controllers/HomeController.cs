@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using Events.Models;
 using System.Data.Entity;
 using Events.ViewModels;
-using System.Data.Entity;
 
 namespace Events.Controllers
 {
@@ -69,11 +68,19 @@ namespace Events.Controllers
         }
 
         [HttpDelete]
-        public ActionResult RemoveFromCart(string id)
+        public ActionResult RemoveFromCart(Guid id)
         {
             var cart = Session["cart"] as TicketModel;
-            cart.Events = cart.Events.Where(w => w.TrackerId != Guid.Parse(id)).ToList();
-            return PartialView("_checkoutDisplayCart", cart);
+            cart.Events = cart.Events.Where(w => w.TrackerId != id).ToList();
+            return PartialView("_shoppingCart", cart);
+        }
+
+        [HttpPost]
+        public ActionResult ClearCart()
+        {
+            var cart = Session["cart"] as TicketModel;
+            cart.Events.Clear();
+            return PartialView("_shoppingCart", cart);
         }
 
     }

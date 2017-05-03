@@ -12,7 +12,7 @@
 
 let removeFromCart = (itemId) => {
     $.ajax({
-        url: "/Home/RemoveFromCart/" + itemId,
+        url: "/Ticket/RemoveFromCart/" + itemId,
         method: "DELETE",
         dataType: "html",
         success: (partial) => {
@@ -20,6 +20,31 @@ let removeFromCart = (itemId) => {
         }
     });
 }
+let removeFromCartHP = (itemId) => {
+    $.ajax({
+        url: "/Home/RemoveFromCart/" + itemId,
+        method: "DELETE",
+        dataType: "html",
+        success: (partial) => {
+            $("#shoppingCart").html(partial);
+        }
+    });
+}
+
+let clearCart = () => {
+    $.ajax({
+        url: "/Home/ClearCart/",
+        method: "POST",
+        dataType: "html",
+        success: (partial) => {
+            $("#shoppingCart").html(partial);
+        }
+    });
+}
+//function reloadCart() {
+//    $('#shoppingCart').load("RemoveFromCart");
+//}
+
 $(document).ready(() => {
 
 });

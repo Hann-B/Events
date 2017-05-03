@@ -5,8 +5,21 @@
     @Html.Partial("_carRow", item)
 }
 
+
 <div class="row">
-    <div class="col-md-2 col-md-offset-8">
-        @Html.DisplayFor(m=>m.TotalPrice, Model.TotalPrice)
+    <div class="pull-right">
+        <div class="lead">
+            Total:
+            @Html.DisplayFor(m => m.TotalPrice, Model.TotalPrice)
+        </div>
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Proceed To Checkout", "Checkout", "Ticket")
+        }
+        else
+        {
+            @Html.ActionLink("Proceed To Checkout", "Login", "Account")
+        }
     </div>
+    
 </div>

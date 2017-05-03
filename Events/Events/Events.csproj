@@ -202,20 +202,25 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705031414534_trytryagain2.cs" />
-    <Compile Include="Migrations\201705031414534_trytryagain2.Designer.cs">
-      <DependentUpon>201705031414534_trytryagain2.cs</DependentUpon>
+    <Compile Include="Migrations\201705032124248_HomePageShopCartCacheClear.cs" />
+    <Compile Include="Migrations\201705032124248_HomePageShopCartCacheClear.Designer.cs">
+      <DependentUpon>201705032124248_HomePageShopCartCacheClear.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705031417157_trytryagain22.cs" />
-    <Compile Include="Migrations\201705031417157_trytryagain22.Designer.cs">
-      <DependentUpon>201705031417157_trytryagain22.cs</DependentUpon>
+    <Compile Include="Migrations\201705032203156_HomePageShopCartReload.cs" />
+    <Compile Include="Migrations\201705032203156_HomePageShopCartReload.Designer.cs">
+      <DependentUpon>201705032203156_HomePageShopCartReload.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705031728124_shoppingCart.cs" />
-    <Compile Include="Migrations\201705031728124_shoppingCart.Designer.cs">
-      <DependentUpon>201705031728124_shoppingCart.cs</DependentUpon>
+    <Compile Include="Migrations\201705032214171_AuthReqdCheckout.cs" />
+    <Compile Include="Migrations\201705032214171_AuthReqdCheckout.Designer.cs">
+      <DependentUpon>201705032214171_AuthReqdCheckout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705032232596_CheckoutCompleteWithoutPaymentOfCourse.cs" />
+    <Compile Include="Migrations\201705032232596_CheckoutCompleteWithoutPaymentOfCourse.Designer.cs">
+      <DependentUpon>201705032232596_CheckoutCompleteWithoutPaymentOfCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,6 +233,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\HomePageVM.cs" />
+    <Compile Include="ViewModels\TicketSalesVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -296,6 +302,12 @@
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Shared\_checkoutDisplayCart.cshtml" />
     <Content Include="Views\Shared\_carRow.cshtml" />
+    <Content Include="Views\Ticket\Delete.cshtml" />
+    <Content Include="Views\Ticket\Details.cshtml" />
+    <Content Include="Views\Ticket\Edit.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Ticket\Checkout.cshtml" />
+    <Content Include="Views\Ticket\SalesDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,14 +328,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705031414534_trytryagain2.resx">
-      <DependentUpon>201705031414534_trytryagain2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705032124248_HomePageShopCartCacheClear.resx">
+      <DependentUpon>201705032124248_HomePageShopCartCacheClear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705031417157_trytryagain22.resx">
-      <DependentUpon>201705031417157_trytryagain22.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705032203156_HomePageShopCartReload.resx">
+      <DependentUpon>201705032203156_HomePageShopCartReload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705031728124_shoppingCart.resx">
-      <DependentUpon>201705031728124_shoppingCart.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705032214171_AuthReqdCheckout.resx">
+      <DependentUpon>201705032214171_AuthReqdCheckout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705032232596_CheckoutCompleteWithoutPaymentOfCourse.resx">
+      <DependentUpon>201705032232596_CheckoutCompleteWithoutPaymentOfCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

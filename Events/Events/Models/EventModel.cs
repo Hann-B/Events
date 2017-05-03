@@ -42,5 +42,7 @@ namespace Events.Models
         public int GenreId { get; set; }
         [ForeignKey("GenreId")]
         public GenreModel Genre { get; set; }
+
+        public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
     }
 }
