@@ -1,0 +1,12 @@
+﻿@model Events.Models.TicketModel
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Confirm Upcoming Events</h2>
+
+<div id="cart">
+    @Html.Partial("_checkoutDisplayCart", Model)
+</div>
+

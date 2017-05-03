@@ -100,9 +100,7 @@ c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\bin\Microsoft
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.csprojResolveAssemblyReference.cache
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.dll
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.pdb
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.DataEntry.resources
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.csproj.GenerateResource.Cache
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.DataEntry2.resources
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.CRUDEvent.resources
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.CacheCreated.resources
-c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.AutoVisitorAccountRegister.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.trytryagain2.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.csproj.GenerateResource.Cache
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.trytryagain22.resources
+C:\Users\Hanna\Documents\Visual Studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.shoppingCart.resources

@@ -1,22 +1,27 @@
-﻿@model IEnumerable<Events.Models.EventModel>
+﻿@model Events.ViewModels.HomePageVM
 
 @{
     ViewBag.Title = "Home Page";
 }
-
 <div class="jumbotron">
     <h1>Locale Bar</h1>
 </div>
 
+<div class="row">
+    <div id="shoppingCart">
+        @Html.Partial("_shoppingCart", Model.ShoppingCart)
+    </div>
+</div>
+
 @if (HttpContext.Current.User.IsInRole("owner"))
 {
-<p>
-    @Html.ActionLink("Create New", "Create","Event")
-</p>
+    <p>
+        @Html.ActionLink("Create New", "Create", "Event")
+    </p>
 }
 
 <div id="eventsList">
-    @foreach (var e in Model)
+    @foreach (var e in Model.Events)
     {
         @Html.Partial("_EventPartial", e)
     }

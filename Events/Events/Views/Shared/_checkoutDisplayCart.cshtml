@@ -1,0 +1,12 @@
+﻿@model Events.Models.TicketModel
+
+@foreach (var item in Model.Events)
+{
+    @Html.Partial("_carRow", item)
+}
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-8">
+        @Html.DisplayFor(m=>m.TotalPrice, Model.TotalPrice)
+    </div>
+</div>

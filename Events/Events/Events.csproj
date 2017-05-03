@@ -205,25 +205,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705022258156_DataEntry.cs" />
-    <Compile Include="Migrations\201705022258156_DataEntry.Designer.cs">
-      <DependentUpon>201705022258156_DataEntry.cs</DependentUpon>
+    <Compile Include="Migrations\201705031414534_trytryagain2.cs" />
+    <Compile Include="Migrations\201705031414534_trytryagain2.Designer.cs">
+      <DependentUpon>201705031414534_trytryagain2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705022306150_DataEntry2.cs" />
-    <Compile Include="Migrations\201705022306150_DataEntry2.Designer.cs">
-      <DependentUpon>201705022306150_DataEntry2.cs</DependentUpon>
+    <Compile Include="Migrations\201705031417157_trytryagain22.cs" />
+    <Compile Include="Migrations\201705031417157_trytryagain22.Designer.cs">
+      <DependentUpon>201705031417157_trytryagain22.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705022350584_CRUDEvent.cs" />
-    <Compile Include="Migrations\201705022350584_CRUDEvent.Designer.cs">
-      <DependentUpon>201705022350584_CRUDEvent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705030012270_CacheCreated.cs" />
-    <Compile Include="Migrations\201705030012270_CacheCreated.Designer.cs">
-      <DependentUpon>201705030012270_CacheCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705030048037_AutoVisitorAccountRegister.cs" />
-    <Compile Include="Migrations\201705030048037_AutoVisitorAccountRegister.Designer.cs">
-      <DependentUpon>201705030048037_AutoVisitorAccountRegister.cs</DependentUpon>
+    <Compile Include="Migrations\201705031728124_shoppingCart.cs" />
+    <Compile Include="Migrations\201705031728124_shoppingCart.Designer.cs">
+      <DependentUpon>201705031728124_shoppingCart.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -231,9 +223,11 @@
     <Compile Include="Models\GenreModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Models\VenueModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HomePageVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -248,6 +242,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -297,6 +292,10 @@
     <Content Include="Views\Event\Delete.cshtml" />
     <Content Include="Views\Event\Details.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Shared\_shoppingCart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Shared\_checkoutDisplayCart.cshtml" />
+    <Content Include="Views\Shared\_carRow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,20 +316,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705022258156_DataEntry.resx">
-      <DependentUpon>201705022258156_DataEntry.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031414534_trytryagain2.resx">
+      <DependentUpon>201705031414534_trytryagain2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705022306150_DataEntry2.resx">
-      <DependentUpon>201705022306150_DataEntry2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031417157_trytryagain22.resx">
+      <DependentUpon>201705031417157_trytryagain22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705022350584_CRUDEvent.resx">
-      <DependentUpon>201705022350584_CRUDEvent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705030012270_CacheCreated.resx">
-      <DependentUpon>201705030012270_CacheCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705030048037_AutoVisitorAccountRegister.resx">
-      <DependentUpon>201705030048037_AutoVisitorAccountRegister.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031728124_shoppingCart.resx">
+      <DependentUpon>201705031728124_shoppingCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

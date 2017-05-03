@@ -12,6 +12,6 @@ namespace Events.Models
         [Required]
         public string Name { get; set; }
 
-        public virtual ICollection<EventModel> events { get; set; }
+        public virtual ICollection<EventModel> events { get; set; } = new HashSet<EventModel>();
     }
 }

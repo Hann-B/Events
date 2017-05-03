@@ -54,6 +54,7 @@ namespace Events.Migrations
             genres.ForEach(genre =>
             {
                 context.Genres.AddOrUpdate(g => g.Name, genre);
+                context.SaveChanges();
             });
 
             var venues = new List<VenueModel>
@@ -65,6 +66,7 @@ namespace Events.Migrations
             venues.ForEach(venue =>
             {
                 context.Venues.AddOrUpdate(v => v.Name, venue);
+                context.SaveChanges();
             });
 
             var events = new List<EventModel>
@@ -94,8 +96,8 @@ namespace Events.Migrations
                     Venue=new VenueModel{Name="Sunset Beach Bar"},
                 },
             };
-            events = events.Select(s => new EventModel(s) { GenreId= genres.First().Id}).ToList();
-            events = events.Select(s => new EventModel(s) { VenueId = venues.First().Id }).ToList();
+            events = events.Select(s => new EventModel(s) {GenreId = genres.Select(g=>g.Id).First()}).ToList();
+            events = events.Select(s => new EventModel(s) { VenueId = venues.Select(v=>v.Id).First() }).ToList();
             events.ForEach(barEvent =>
             {
                 context.Events.AddOrUpdate(e => e.Title, barEvent);

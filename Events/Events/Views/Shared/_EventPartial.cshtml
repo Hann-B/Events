@@ -6,17 +6,20 @@
             <h4 class="list-group-item-heading">@Model.Title</h4>
             <p class="list-group-item-text">
                 <ul>
-                    <li>Model.Genre.Name</li>
+                    <li>@Model.Genre.Name</li>
                     <li>@Model.Description</li>
-                    <li>Model.Venue.Name</li>
+                    <li>@Model.Venue.Name</li>
                     <li>@Model.StartTime</li>
                     <li>@Model.EndTime</li>
                 </ul>
+                <button class="btn btn-default" onclick="addToCart(@Model.Id)">
+                    <i class="glyphicon glyphicon-plus-sign"></i>
+                </button>
                 @if (HttpContext.Current.User.IsInRole("owner"))
                 {
-                @Html.ActionLink("Edit","Edit","Event", new { id = Model.Id }, null) <br />
-                @Html.ActionLink("Details", "Details", "Event", new { id = Model.Id }, null) <br/>
-                @Html.ActionLink("Delete", "Delete", "Event", new { id = Model.Id }, null) <br/>
+                    @Html.ActionLink("Edit", "Edit", "Event", new { id = Model.Id }, null) <br />
+                    @Html.ActionLink("Details", "Details", "Event", new { id = Model.Id }, null) <br />
+                    @Html.ActionLink("Delete", "Delete", "Event", new { id = Model.Id }, null) <br />
                 }
             </p>
         </div>

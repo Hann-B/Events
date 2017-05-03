@@ -10,6 +10,7 @@ using Events.Models;
 
 namespace Events.Controllers
 {
+    [Authorize(Roles = "owner")]
     public class EventController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,7 +18,7 @@ namespace Events.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            var barEvent = db.Events.OrderByDescending(o => o.StartTime).ToList();
+            var barEvent = db.Events.OrderBy(o => o.StartTime).ToList();
             return View(barEvent);
         }
 
@@ -49,12 +50,28 @@ namespace Events.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,StartTime,EndTime,VenueId,GenreId")] EventModel eventModel)
+        public ActionResult Create([Bind(Include = "Title,Description,StartTime,EndTime,VenueId,GenreId")] EventModel eventModel)
         {
             if (ModelState.IsValid)
             {
                 db.Events.Add(eventModel);
                 db.SaveChanges();
+
+                HttpRuntime.Cache.Remove("event");
+
+                var barEvent = new ApplicationDbContext().Events
+                    .Include(i => i.Genre)
+                    .Include(i => i.Venue)
+                    .OrderBy(o => o.StartTime)
+                    .ToList();
+                HttpRuntime.Cache.Add(
+                    "event",
+                    barEvent,
+                    null,
+                    DateTime.Now.AddMonths(1),
+                    new TimeSpan(),
+                    System.Web.Caching.CacheItemPriority.High,
+                    null);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -91,6 +108,22 @@ namespace Events.Controllers
             {
                 db.Entry(eventModel).State = EntityState.Modified;
                 db.SaveChanges();
+
+                HttpRuntime.Cache.Remove("event");
+
+                var barEvent = new ApplicationDbContext().Events
+                    .Include(i => i.Genre)
+                    .Include(i => i.Venue)
+                    .OrderBy(o => o.StartTime)
+                    .ToList();
+                HttpRuntime.Cache.Add(
+                    "event",
+                    barEvent,
+                    null,
+                    DateTime.Now.AddMonths(1),
+                    new TimeSpan(),
+                    System.Web.Caching.CacheItemPriority.High,
+                    null);
                 return RedirectToAction("Index", "Home");
             }
             ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name", eventModel.GenreId);
@@ -121,6 +154,22 @@ namespace Events.Controllers
             EventModel eventModel = db.Events.Find(id);
             db.Events.Remove(eventModel);
             db.SaveChanges();
+
+            HttpRuntime.Cache.Remove("event");
+
+            var barEvent = new ApplicationDbContext().Events
+                .Include(i => i.Genre)
+                .Include(i => i.Venue)
+                .OrderBy(o => o.StartTime)
+                .ToList();
+            HttpRuntime.Cache.Add(
+                "event",
+                barEvent,
+                null,
+                DateTime.Now.AddMonths(1),
+                new TimeSpan(),
+                System.Web.Caching.CacheItemPriority.High,
+                null);
             return RedirectToAction("Index", "Home");
         }
 

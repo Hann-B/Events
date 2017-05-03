@@ -24,6 +24,10 @@ namespace Events.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        [DisplayFormat(DataFormatString ="{0:C}")]
+        public double Price { get; set; }
+        [NotMapped]
+        public Guid TrackerId { get; set; } = Guid.NewGuid();
 
         [DisplayFormat(DataFormatString="{0:}MM/dd h:mm")]
         public DateTime StartTime { get; set; }

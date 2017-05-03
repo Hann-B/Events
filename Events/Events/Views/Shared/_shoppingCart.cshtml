@@ -1,0 +1,17 @@
+﻿
+@model Events.Models.TicketModel
+
+@if (Model.Events.Any())
+{
+    <h3>Your Events:</h3>
+    <ul>
+        @foreach (var item in Model.Events)
+        {
+            <li>@item.Title</li>
+        }
+    </ul>
+    @Html.ActionLink("Proceed To Checkout", "Checkout", "Home") 
+}
+else
+{
+<h4>You have no Events</h4>}
