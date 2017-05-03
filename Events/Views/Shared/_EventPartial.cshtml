@@ -1,0 +1,24 @@
+﻿@model Events.Models.EventModel
+
+<div class="row">
+    <div class="event">
+        <div class="list-group">
+            <h4 class="list-group-item-heading">@Model.Title</h4>
+            <p class="list-group-item-text">
+                <ul>
+                    <li>Model.Genre.Name</li>
+                    <li>@Model.Description</li>
+                    <li>Model.Venue.Name</li>
+                    <li>@Model.StartTime</li>
+                    <li>@Model.EndTime</li>
+                </ul>
+                @if (HttpContext.Current.User.IsInRole("owner"))
+                {
+                @Html.ActionLink("Edit","Edit","Event", new { id = Model.Id }) <br />
+                @Html.ActionLink("Details", "Details", "Event", new { id = Model.Id }) <br/>
+                @Html.ActionLink("Delete", "Delete", "Event", new { id = Model.Id }) <br/>
+                }
+            </p>
+        </div>
+    </div>
+</div>

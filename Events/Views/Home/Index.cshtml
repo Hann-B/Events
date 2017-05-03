@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Events.Models.EventModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Locale Bar</h1>
+</div>
+
+@if (HttpContext.Current.User.IsInRole("owner"))
+{
+<p>
+    @Html.ActionLink("Create New", "Create","Event")
+</p>
+}
+
+<div id="eventsList">
+    @foreach (var e in Model)
+    {
+        @Html.Partial("_EventPartial", e)
+    }
+</div>
