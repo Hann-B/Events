@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201705030012270_CacheCreated.Designer.cs">
       <DependentUpon>201705030012270_CacheCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705030048037_AutoVisitorAccountRegister.cs" />
+    <Compile Include="Migrations\201705030048037_AutoVisitorAccountRegister.Designer.cs">
+      <DependentUpon>201705030048037_AutoVisitorAccountRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventModel.cs" />
@@ -324,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705030012270_CacheCreated.resx">
       <DependentUpon>201705030012270_CacheCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705030048037_AutoVisitorAccountRegister.resx">
+      <DependentUpon>201705030048037_AutoVisitorAccountRegister.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

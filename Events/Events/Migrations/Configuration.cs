@@ -35,7 +35,7 @@ namespace Events.Migrations
             }
             var ownerEmail = "owner@localebar.com";
             var defaultPassword = "Password1!";
-            if(!context.Users.Any(u=>u.UserName == ownerEmail))
+            if (!context.Users.Any(u => u.UserName == ownerEmail))
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
@@ -45,11 +45,27 @@ namespace Events.Migrations
                 userManager.AddToRole(user.Id, ownerRole);
             }
 
-            var genreList = new GenreModel { Name = "Genres" };
-            context.Genres.AddOrUpdate(g => g.Name, genreList);
+            var genres = new List<GenreModel>
+            {
+             new GenreModel { Name = "Live Music" },
+             new GenreModel { Name = "Wine Tasting" },
+             new GenreModel { Name = "Beer Tasting" },
+            };
+            genres.ForEach(genre =>
+            {
+                context.Genres.AddOrUpdate(g => g.Name, genre);
+            });
 
-            var venueList = new VenueModel { Name = "Venues" };
-            context.Venues.AddOrUpdate(v => v.Name, venueList);
+            var venues = new List<VenueModel>
+            {
+            new VenueModel { Name = "The Blueberry Patch" },
+            new VenueModel { Name = "Otherside Winery" },
+            new VenueModel { Name = "Sunset Beach Bar" },
+            };
+            venues.ForEach(venue =>
+            {
+                context.Venues.AddOrUpdate(v => v.Name, venue);
+            });
 
             var events = new List<EventModel>
             {
@@ -78,8 +94,8 @@ namespace Events.Migrations
                     Venue=new VenueModel{Name="Sunset Beach Bar"},
                 },
             };
-            events = events.Select(s => new EventModel(s) { GenreId = genreList.Id }).ToList();
-            events = events.Select(s => new EventModel(s) { VenueId = venueList.Id }).ToList();
+            events = events.Select(s => new EventModel(s) { GenreId= genres.First().Id}).ToList();
+            events = events.Select(s => new EventModel(s) { VenueId = venues.First().Id }).ToList();
             events.ForEach(barEvent =>
             {
                 context.Events.AddOrUpdate(e => e.Title, barEvent);

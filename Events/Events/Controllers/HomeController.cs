@@ -15,7 +15,7 @@ namespace Events.Controllers
             if (eventFromCache == null)
             {
                 var barEvent = new ApplicationDbContext().Events
-                    .OrderByDescending(o => o.StartTime)
+                    .OrderBy(o => o.StartTime)
                     .ToList();
                 HttpRuntime.Cache.Add(
                     "event",

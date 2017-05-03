@@ -105,3 +105,4 @@ c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Eve
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.DataEntry2.resources
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.CRUDEvent.resources
 c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.CacheCreated.resources
+c:\users\hanna\documents\visual studio 2017\Projects\Events\Events\obj\Debug\Events.Migrations.AutoVisitorAccountRegister.resources

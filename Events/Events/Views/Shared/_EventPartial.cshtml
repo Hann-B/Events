@@ -14,9 +14,9 @@
                 </ul>
                 @if (HttpContext.Current.User.IsInRole("owner"))
                 {
-                @Html.ActionLink("Edit","Edit","Event", new { id = Model.Id }) <br />
-                @Html.ActionLink("Details", "Details", "Event", new { id = Model.Id }) <br/>
-                @Html.ActionLink("Delete", "Delete", "Event", new { id = Model.Id }) <br/>
+                @Html.ActionLink("Edit","Edit","Event", new { id = Model.Id }, null) <br />
+                @Html.ActionLink("Details", "Details", "Event", new { id = Model.Id }, null) <br/>
+                @Html.ActionLink("Delete", "Delete", "Event", new { id = Model.Id }, null) <br/>
                 }
             </p>
         </div>
